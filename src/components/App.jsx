@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid';
-// import Notiflix from 'notiflix';
 import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
@@ -29,10 +28,6 @@ class App extends Component {
     for (const { name } of this.state.contacts) {
       if (name === data.name) {
         alert(`${name} is already in contacts.`);
-        // Notiflix.Confirm.show(
-        //   `${item.name} is already in contacts.`,
-        //   'Please click "yes" to confirm'
-        // );
         return;
       }
     }
@@ -64,16 +59,10 @@ class App extends Component {
     return (
       <div className="mainContainer">
         <h1 className="header">Phonebook</h1>
-        <ContactForm getData={this.handleFormData}></ContactForm>
+        <ContactForm getData={this.handleFormData} />
         <h2 className="header">Contacts</h2>
-        <Filter
-          value={this.state.filter}
-          changeFilter={this.chsngeFilter}
-        ></Filter>
-        <ContactList
-          contacts={filteredItem}
-          onDelete={this.deleteItem}
-        ></ContactList>
+        <Filter value={this.state.filter} changeFilter={this.chsngeFilter} />
+        <ContactList contacts={filteredItem} onDelete={this.deleteItem} />
       </div>
     );
   }

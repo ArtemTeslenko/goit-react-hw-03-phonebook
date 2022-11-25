@@ -19,7 +19,7 @@ class Filter extends Component {
           name="filter"
           value={this.props.value}
           onChange={this.props.changeFilter}
-        ></FormInput>
+        />
       </Wrapper>
     );
   }
